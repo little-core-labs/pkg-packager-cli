@@ -1,0 +1,36 @@
+{
+  "name": "pkg-packager-cli",
+  "version": "0.0.0",
+  "description": "Command line interface for the `pkg-packager` module.",
+  "main": "index.js",
+  "bin": {
+    "pkg-packager": "bin/pkg-packager"
+  },
+  "scripts": {
+    "test": ":"
+  },
+  "keywords": [
+    "pkg",
+    "packager",
+    "cli",
+    "command",
+    "line",
+    "interface"
+  ],
+  "author": "Joseph Werle <joseph.werle@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "minimist": "^1.2.0",
+    "pkg-fetch": "^2.6.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-core-labs/pkg-packager-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/little-core-labs/pkg-packager-cli/issues"
+  },
+  "homepage": "https://github.com/little-core-labs/pkg-packager-cli#readme"
+}
