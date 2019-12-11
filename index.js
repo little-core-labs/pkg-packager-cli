@@ -183,6 +183,8 @@ for (let target of argv._) {
     productName: defaultProductName,
     executableName: defaultProductName,
     productFileName: defaultProductName,
+    // just use `require()` for the `loadBuilder()` function
+    loadBuilder: (builderPath) => require(builderPath)
   })
 
   if ('product-name' in argv) {
