@@ -1,4 +1,5 @@
 const { version } = require('./package.json')
+const prettyBytes = require('pretty-bytes')
 const { system } = require('pkg-fetch')
 const minimist = require('minimist')
 const packager = require('pkg-packager')
@@ -113,7 +114,7 @@ const opts = {
   output: argv.output,
   platform: argv.platform,
   icons: [{
-    file: path.resolve(__dirname, '..', 'assets', 'icon.ico'),
+    file: path.resolve(__dirname, 'assets', 'icon.ico'),
     size: 64
   }],
 
@@ -209,6 +210,11 @@ packager.package({ config: argv.config }, (err, results) => {
     return process.nextTick(process.exit, 1)
   }
 
-  results = results.filter(Boolean)
-  console.log(results)
+  for (const result of results) {
+    if (!result) { continue }
+    console.log('> wrote: %s (%s) sha512:%s',
+      result.name.replace(process.cwd(), '.'),
+      prettyBytes(result.size),
+      result.sha512)
+  }
 })
