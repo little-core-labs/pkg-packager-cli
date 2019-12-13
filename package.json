@@ -1,6 +1,6 @@
 {
   "name": "pkg-packager-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Command line interface for the `pkg-packager` module.",
   "main": "index.js",
   "bin": {
