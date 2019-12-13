@@ -22,7 +22,7 @@ where options can be:
   -p, --platform               The platform type (linux|macos|win) [default: ${system.hostPlatform}]
       --product-file-name      The packaged product file name
       --product-name           The packaged product name
-  -t, --type                   Packager builder (appimage|appdmg|zip)
+  -t, --type                   Packager builder (appimage|appdmg|exe|zip)
   -V, --version                Output program version
 `
 
@@ -70,6 +70,10 @@ const argv = minimist(process.argv.slice(2), {
 
       if ('darwin' === process.platform) {
         return 'appdmg'
+      }
+
+      if ('win32' === process.platform) {
+        return 'exe'
       }
 
       return 'zip'
